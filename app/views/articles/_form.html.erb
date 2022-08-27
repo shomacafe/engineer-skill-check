@@ -1,0 +1,16 @@
+<div class="employee_form">
+
+  <%= form_with model: article, local: true do |f| %>
+    <div class="form_group">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="form_group">
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+    </div>
+
+    <%= f.submit '保存' %>
+  <% end %>
+</div>
