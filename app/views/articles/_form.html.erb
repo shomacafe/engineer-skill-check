@@ -1,4 +1,11 @@
 <div class="employee_form">
+  <% if article.errors.present? %>
+    <ul>
+      <% article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
 
   <%= form_with model: article, local: true do |f| %>
     <div class="form_group">
