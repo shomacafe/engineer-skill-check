@@ -18,7 +18,12 @@
       <tbody>
       <% @articles.each do |article| %>
         <tr>
-          <th class="article_title_name"><%= link_to article.title, article_path(article) %></th>
+          <th class="article_title_name">
+            <%= link_to article.title, article_path(article) %>
+            <% if article.created_at + 1.week > Date.today %><!--公開日が一週間以内ならnew!マークをつける-->
+              <span class="article_new">new!</span>
+            <% end %>
+          </th>
           <th class="article_date"><%= l article.created_at %></th>
           <% if current_user.news_posting_auth %>
             <% if article.employee == current_user %>
