@@ -12,9 +12,14 @@
   <body>
     <% if logged_in? %>
       <%= render 'layouts/header' %>
+    <% else %>
+      <%= render 'layouts/sign_out_header' %>
     <% end %>
     <div class='container'>
       <%= yield %>
     </div>
+
+      <%= render 'layouts/footer' %>
+
   </body>
 </html>

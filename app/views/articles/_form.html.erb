@@ -1,4 +1,4 @@
-<div class="employee_form">
+<div class="form_box">
   <% if article.errors.present? %>
     <ul>
       <% article.errors.full_messages.each do |message| %>
@@ -8,16 +8,11 @@
   <% end %>
 
   <%= form_with model: article, local: true do |f| %>
-    <div class="form_group">
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </div>
+    <p class="article_form"><%= f.label :title %><p>
+    <p><%= f.text_field :title, class: "article_title_form" %></p>
+    <p class="article_form"><%= f.label :content %></p>
+    <p><%= f.text_area :content, class: "article_content_form" %></p>
 
-    <div class="form_group">
-      <%= f.label :content %>
-      <%= f.text_area :content %>
-    </div>
-
-    <%= f.submit '保存' %>
+    <div class="article_submit"><%= f.submit '保存する', class: "article_btn" %></div>
   <% end %>
 </div>

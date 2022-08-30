@@ -1,20 +1,18 @@
-<div class="profile_space">
-  <p class="employee_index">
-    <%= link_to '一覧に戻る', articles_path, class: 'btn' %>
+<div class="article_space">
+  <div class="return_edit_btn">
+    <div><%= link_to '一覧に戻る', articles_path, class: 'return-btn' %></div>
     <% if current_user.news_posting_auth %>
       <% if @article.employee == current_user %>
-        <th class="btn_th"><%= link_to '編集', edit_article_path(@article), class: 'btn' %></th>
+        <div><%= link_to '編集', edit_article_path(@article), class: 'edit-btn' %></div>
       <% end %>
     <% end %>
-  </p>
-
-  <div class="row">
-    <span class="label">タイトル</span>
-    <span class="profile_value"><%= @article.title %></span>
   </div>
 
-  <div class="row">
-    <span class="label">内容</span>
-    <span class="profile_value"><%= @article.content %></span>
+  <div class="article_title">
+    <span class="article_title_text"><%= @article.title %></span>
+  </div>
+
+  <div class="article_content">
+    <p><%= @article.content %></p>
   </div>
 </div>
