@@ -41,3 +41,6 @@ ja:
       article:
         title: タイトル
         content: お知らせ内容
+  time:
+    formats:
+      default: "%Y年%m月%d日"
