@@ -51,11 +51,14 @@
   border: 1px solid #d3d3d3;
 }
 //お知らせ参照ページ
+.posted_date{
+  color: #696969;
+}
+
 .article_title{
   width: 100%;
   height: auto;
   padding: 20px 32px;
-  text-align: center;
   background: white;
   border-radius: 5px;
   box-shadow: #e4e4e4 0 4px 0;
