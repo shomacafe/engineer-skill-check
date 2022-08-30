@@ -1,3 +1,4 @@
+<% provide(:title, @employee.last_name + @employee.first_name) %>
 <div class="profile_space">
   <%= render partial: 'form', locals: { employee: @employee, profile: @profile } %>
 </div>

@@ -1,3 +1,4 @@
+<% provide(:title, @employee.last_name + @employee.first_name) %>
 <div class="box">
   <div class="profile_space">
     <p class="employee_index"><%= link_to '一覧に戻る', employees_path, class: 'return-btn'  %></p>
