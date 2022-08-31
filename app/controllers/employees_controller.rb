@@ -1,9 +1,10 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: %i(edit update destroy)
   before_action :set_form_option, only: %i(new create edit update)
+  before_action :set_q, only: [:index]
 
   def index
-    @employees = Employee.active.order("#{sort_column} #{sort_direction}")
+    @employees = @q.result.active.order("#{sort_column} #{sort_direction}")
   end
 
   def new
@@ -53,6 +54,10 @@ class EmployeesController < ApplicationController
   def set_form_option
     @departments = Department.all
     @offices = Office.all
+  end
+
+  def set_q
+    @q = Employee.ransack(params[:q])
   end
 
   def sort_column
