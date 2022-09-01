@@ -4,7 +4,7 @@ class EmployeesController < ApplicationController
   before_action :set_q, only: [:index]
 
   def index
-    @employees = @q.result.active.order("#{sort_column} #{sort_direction}")
+    @employees = @q.result.active.order("#{sort_column} #{sort_direction}").page(params[:page]).per(10)
   end
 
   def new
