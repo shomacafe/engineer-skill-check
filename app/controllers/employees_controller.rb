@@ -51,16 +51,18 @@ class EmployeesController < ApplicationController
   end
 
   def send_employees_csv(employees)
-    csv_data = CSV.generate do |csv|
+    bom = "\uFEFF"
+    csv_data = CSV.generate(bom) do |csv|
       header = %w(id 氏名(姓) 氏名(名) 社員番号 部署 オフィス アカウント メールアドレス )
       csv << header
 
       employees.each do |employee|
-        values = [employee.id,employee.last_name,employee.first_name,employee.number,employee.department.name,employee.office.name,employee.account,employee.email, ]
+        values = [employee.id,employee.last_name,employee.first_name,employee.number,employee.department.name,employee.office.name,employee.account,employee.email ]
         csv << values
       end
     end
-    send_data(csv_data, filename: "employees.csv")
+    time_now = Time.zone.now.strftime('%Y%m%d%H%M%S')
+    send_data(csv_data, filename: "employees_#{time_now}.csv", type: :csv)
   end
 
 
