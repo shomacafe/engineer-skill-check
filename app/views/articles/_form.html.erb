@@ -7,6 +7,7 @@
     </ul>
   <% end %>
 
+  <div><%= link_to '一覧に戻る', articles_path, class: 'return-btn' %></div>
   <%= form_with model: article, local: true do |f| %>
     <p class="article_form"><%= f.label :title %><p>
     <p><%= f.text_field :title, class: "article_title_form" %></p>

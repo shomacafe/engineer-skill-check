@@ -7,7 +7,8 @@
         <% end %>
       </ul>
     <% end %>
-
+    
+    <p class="employee_index"><%= link_to '一覧に戻る', employees_path, class: 'return-btn'  %></p>
     <%= form_with model: employee, local: true do |f| %>
       <div class="form_group">
         <%= f.label :number %>

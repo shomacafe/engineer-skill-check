@@ -6,7 +6,7 @@
       <% end %>
     </ul>
   <% end %>
-
+  <p class="employee_index"><%= link_to '一覧に戻る', employees_path, class: 'return-btn'  %></p>
   <%= render partial: 'employee_info', locals: { employee: @employee } %>
 
   <%= form_with model: [employee, profile], local: true do |f| %>
