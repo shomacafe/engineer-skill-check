@@ -40,8 +40,8 @@
           <th><%= employee.department.name %></th>
           <% if current_user.employee_info_manage_auth %>
             <th class="ed_del_btn">
-              <div class="ad"><%= link_to '編集', edit_employee_path(employee), class: 'edit-btn' %></div>
-              <div class="ad"><%= link_to '削除', employee, method: :delete, data: { confirm: "社員「#{employee.first_name} #{employee.last_name}」を削除します。よろしいですか？" }, class: 'delete-btn' %></div>
+              <div class="editDelete"><%= link_to '編集', edit_employee_path(employee), class: 'edit-btn' %></div>
+              <div class="editDelete"><%= link_to '削除', employee, method: :delete, data: { confirm: "社員「#{employee.first_name} #{employee.last_name}」を削除します。よろしいですか？" }, class: 'delete-btn' %></div>
             </th>
           <% end %>
         </tr>
