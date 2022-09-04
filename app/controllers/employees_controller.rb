@@ -65,7 +65,6 @@ class EmployeesController < ApplicationController
     send_data(csv_data, filename: "employees_#{time_now}.csv", type: :csv)
   end
 
-
   private
 
   def employee_params
@@ -92,5 +91,4 @@ class EmployeesController < ApplicationController
   def sort_direction
     params[:direction] ? params[:direction] : 'asc'
   end
-
 end
