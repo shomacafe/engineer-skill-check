@@ -43,6 +43,7 @@ RSpec.describe "社員紹介機能", type: :system do
 
   context "社員B(管理権限なし)がログインしているとき" do
     let(:employee) { employee_b }
+
     it "新規追加ボタンが表示されないこと" do
       expect(page).not_to have_selector ".new_employee", text: "新規追加"
     end

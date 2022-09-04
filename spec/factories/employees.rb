@@ -5,7 +5,7 @@ FactoryBot.define do
     password { "パスワード" }
     last_name { "氏名(姓)" }
     first_name { "氏名(名)" }
-    account { "アカウント" }
+    account { |n| "アカウント#{n}" }
     date_of_joining { "2022-09-19" }
     employee_info_manage_auth { true }
     news_posting_auth { true }
