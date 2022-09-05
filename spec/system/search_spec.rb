@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "検索機能", type: :system do
-  let(:employee) {create(:employee)}
+  let(:employee) { create(:employee) }
   let!(:employee_a) { create(:employee, last_name: "鈴木") }
   let!(:employee_b) { create(:employee, last_name: "佐藤") }
 

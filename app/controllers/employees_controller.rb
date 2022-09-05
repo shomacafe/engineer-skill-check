@@ -4,7 +4,7 @@ class EmployeesController < ApplicationController
   before_action :set_employee, only: %i(edit update destroy)
   before_action :set_form_option, only: %i(new create edit update)
   before_action :set_q, only: [:index]
-
+  # rubocop:disable all
   def index
     @employees = @q.result.active.order("#{sort_column} #{sort_direction}").page(params[:page]).per(10)
 
@@ -15,6 +15,7 @@ class EmployeesController < ApplicationController
       end
     end
   end
+  # rubocop:enable all
 
   def new
     @employee = Employee.new
@@ -53,11 +54,11 @@ class EmployeesController < ApplicationController
   def send_employees_csv(employees)
     bom = "\uFEFF"
     csv_data = CSV.generate(bom) do |csv|
-      header = %w(id 氏名(姓) 氏名(名) 社員番号 部署 オフィス アカウント メールアドレス )
+      header = %w(id 氏名(姓) 氏名(名) 社員番号 部署 オフィス アカウント メールアドレス)
       csv << header
 
       employees.each do |employee|
-        values = [employee.id,employee.last_name,employee.first_name,employee.number,employee.department.name,employee.office.name,employee.account,employee.email ]
+        values = [employee.id, employee.last_name, employee.first_name, employee.number, employee.department.name, employee.office.name, employee.account, employee.email]
         csv << values
       end
     end

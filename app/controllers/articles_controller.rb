@@ -1,9 +1,10 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i(show edit update destroy)
-
+  # rubocop:disable all
   def index
     @articles = Article.active.order("#{sort_article} #{sort_direction}").page(params[:page]).per(10)
   end
+  # rubocop:enable all
 
   def new
     @article = Article.new

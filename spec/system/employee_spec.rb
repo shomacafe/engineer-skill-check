@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "社員紹介機能", type: :system do
   let(:employee_a) { create(:employee, last_name: "社員A") }
-  let(:employee_b) { create(:employee, last_name: "社員B", employee_info_manage_auth: "false" ) }
+  let(:employee_b) { create(:employee, last_name: "社員B", employee_info_manage_auth: "false") }
 
   before do
     visit login_path
@@ -57,5 +57,4 @@ RSpec.describe "社員紹介機能", type: :system do
       expect(page).not_to have_selector ".editDelete", text: "削除"
     end
   end
-  
 end

@@ -22,7 +22,7 @@ RSpec.describe "お知らせ表示機能", type: :system do
       fill_in "article_content", with: "お知らせ内容A"
       click_button "保存する"
     end
-    
+
     it "お知らせタイトルが表示されること" do
       expect(page).to have_content "既存のお知らせ"
     end
@@ -47,7 +47,7 @@ RSpec.describe "お知らせ表示機能", type: :system do
     before do
       visit articles_path
     end
-    
+
     it "お知らせタイトルが表示されること" do
       expect(page).to have_content "既存のお知らせ"
     end

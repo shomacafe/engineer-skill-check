@@ -18,4 +18,3 @@ RSpec.describe "社員プロフィール", type: :model do
     expect(profile.errors[:profile]).to include("は300文字以内で入力してください")
   end
 end
-
