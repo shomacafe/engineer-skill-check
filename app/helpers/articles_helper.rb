@@ -1,6 +1,6 @@
 module ArticlesHelper
-  def sort_article(column)
+  def sort_article(column, title)
     direction = params[:direction] == 'asc' ? 'desc' : 'asc'
-    link_to column, { direction: direction }
+    link_to title, { sort: column, direction: direction }
   end
 end

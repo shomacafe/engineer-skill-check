@@ -1,0 +1,18 @@
+inherit_from:
+  - .rubocop_airbnb.yml
+
+Rails:
+  Enabled: true
+
+LineLength:
+  Max: 500
+
+AllCops:
+  Exclude: 
+    - 'bin/*'
+    - 'db/**/*'
+    - 'vendor/**/*'
+    - 'config/**/*'
+    - 'app/models/employee.rb'
+    - 'spec/models/employee_spec.rb'
+  NewCops: enable
